@@ -1,0 +1,6 @@
+languages:
+- java
+- javascript
+
+exclude:
+- /src/main/webapp/swag/*
