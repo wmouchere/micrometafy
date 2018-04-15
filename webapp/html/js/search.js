@@ -40,16 +40,18 @@ document.getElementById('query').onkeydown = function(e){
                     info += `<button type="submit" onclick="playTrack('${t.url}')" class="pure-button"><i class="fas fa-play"></i></button>`
                 }
                 
-                info += `<div class="dropdown">
-                            <button type="submit" onclick="dropDown(${i})" class="dropbtn pure-button button-add">
-                                <i class="fas fa-plus dropbtn"></i>
-                            </button>
-                            <div id="dropdown${i}" class="dropdown-content">
-                            <a href="playlists.html" class="button"><i class="fas fa-plus"></i>\tNew playlist</a>`
-                            
-                playlists.forEach(function (p) {
-                                info += `<label onclick="add(${i}, ${p.id})">${p.name}</label>`
-                });
+                if(playlists) {
+                    info += `<div class="dropdown">
+                                <button type="submit" onclick="dropDown(${i})" class="dropbtn pure-button button-add">
+                                    <i class="fas fa-plus dropbtn"></i>
+                                </button>
+                                <div id="dropdown${i}" class="dropdown-content">
+                                <a href="playlists.html" class="button"><i class="fas fa-plus"></i>\tNew playlist</a>`
+                
+                    playlists.forEach(function (p) {
+                                    info += `<label onclick="add(${i}, ${p.id})">${p.name}</label>`
+                    });
+                }
 
                 info +=     `</div>
                         </div>`       
